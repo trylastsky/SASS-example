@@ -1,5 +1,21 @@
+@import "./header.css";
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-Medium.ttf");
+  font-weight: 500;
+}
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Space Grotesk";
 }
 
 body {
@@ -15,87 +31,119 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1240px;
+  max-width: 124rem;
 }
 
-.header {
+.nav {
   display: flex;
-  align-items: center;
-  width: 100%;
-}
-@media all and (max-width: 1200px) {
-  .header {
-    padding: 0 20px;
-  }
-}
-
-.logo {
-  width: 100%;
-  max-width: 220px;
-  position: relative;
-  z-index: 2;
-}
-@media all and (max-width: 1200px) {
-  .logo {
-    max-width: 144px;
-  }
-}
-
-nav {
-  display: flex;
-  font-size: 20px;
-  gap: 40px;
+  font-size: 2rem;
+  gap: 4rem;
   align-items: center;
   margin-left: auto;
 }
 @media all and (max-width: 1200px) {
-  nav nav {
+  .nav nav {
     position: fixed;
     right: 0;
     top: 0;
     flex-direction: column;
     background-color: white;
-    row-gap: 40px;
-    padding: 100px 60px 40px;
+    row-gap: 4rem;
+    padding: 10rem 6rem 4rem;
     height: 100vh;
     width: 100%;
-    max-width: 300px;
+    max-width: 30rem;
     z-index: 1;
     transform: translateX(100%);
     transition: all 0.3s ease;
   }
 }
 @media all and (max-width: 500px) {
-  nav {
+  .nav {
     max-width: 100%;
   }
 }
-nav.active {
+.nav_active {
   transform: translateX(0);
   transition: all 0.3s ease-in;
 }
-nav a {
+.nav__link {
   text-decoration: none;
   color: black;
   flex-shrink: 0;
 }
 
-button {
+.btn {
+  border-radius: 1.4rem;
+  padding: 2rem 3.5rem;
+  font-size: 2rem;
+  color: #191A23;
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 14px;
-  padding: 20px 35px;
-  font-size: 20px;
-  margin-left: 40px;
+  border: none;
+  cursor: pointer;
+  outline-width: 0;
 }
 @media all and (max-width: 1200px) {
-  button {
+  .btn {
+    width: 100%;
+  }
+}
+@media (hover: hover) {
+  .btn {
+    transition: all 0.3s ease-out;
+  }
+  .btn:hover, .btn:active {
+    transition: all 0.3s ease-in;
+  }
+}
+.btn_primary {
+  color: #FFFFFF;
+  background-color: #191A23;
+}
+@media (hover: hover) {
+  .btn_primary {
+    transition: all 0.3s ease-out;
+  }
+  .btn_primary:hover, .btn_primary:active {
+    color: #000000;
+    background-color: #B9FF66;
+  }
+}
+.btn_secondary {
+  background-color: #B9FF66;
+}
+@media (hover: hover) {
+  .btn_secondary {
+    transition: all 0.3s ease-out;
+  }
+  .btn_secondary:hover, .btn_secondary:active {
+    color: #FFFFFF;
+    background-color: #191A23;
+  }
+}
+.btn_outline {
+  border: 1px solid #191A23;
+}
+@media (hover: hover) {
+  .btn_outline {
+    transition: all 0.3s ease-out;
+  }
+  .btn_outline:hover, .btn_outline:active {
+    color: #FFFFFF;
+    background-color: #191A23;
+  }
+}
+.btn_header {
+  margin-left: 4rem;
+}
+@media all and (max-width: 1200px) {
+  .btn_header {
     display: none;
   }
 }
 
 .menu {
-  width: 24px;
+  width: 2.4rem;
   display: none;
   margin-left: auto;
   position: relative;
