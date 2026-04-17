@@ -1,4 +1,3 @@
-@import "./header.css";
 @font-face {
   font-family: "Space Grotesk";
   src: url("/assets/fonts/SpaceGrotesk-Regular.ttf");
@@ -34,6 +33,17 @@ body {
   max-width: 124rem;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+@media all and (max-width: 1200px) {
+  .header {
+    padding: 0 2rem;
+  }
+}
+
 .nav {
   display: flex;
   font-size: 2rem;
@@ -42,7 +52,7 @@ body {
   margin-left: auto;
 }
 @media all and (max-width: 1200px) {
-  .nav nav {
+  .nav {
     position: fixed;
     right: 0;
     top: 0;
@@ -152,6 +162,55 @@ body {
 @media all and (max-width: 1200px) {
   .menu {
     display: block;
+  }
+}
+
+.icon_plus, .icon_minus {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  border: 1px solid #191A23;
+  background-color: #F3F3F3;
+  position: relative;
+}
+@media all and (max-width: 1200px) {
+  .icon_plus, .icon_minus {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.icon_plus::before, .icon_minus::before {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 0.6rem;
+  background-color: #191A23;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media all and (max-width: 1200px) {
+  .icon_plus::before, .icon_minus::before {
+    width: 1.3rem;
+    height: 0.3rem;
+  }
+}
+.icon_plus::after {
+  content: "";
+  display: block;
+  width: 0.6rem;
+  height: 1.8 rem;
+  background-color: #191A23;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media all and (max-width: 1200px) {
+  .icon_plus::after {
+    width: 1.3rem;
+    height: 0.3rem;
   }
 }
 
